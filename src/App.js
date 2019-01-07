@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from './container/Dashboard';
 import UserProfile from './container/UserProfile';
+import SignupForm from './component/SignupForm';
 
 import './semantic/common.scss';
 import './semantic/semantic_main.scss';
+
 
 class App extends Component {
   render() {
@@ -13,6 +15,7 @@ class App extends Component {
           <Switch>
               <Route exact path = "/dashboard" component = {Dashboard} />
               <Route exact path = "/profile" component = {UserProfile} />
+              <Route exact path = "/signupform" component = {SignupForm} />
           </Switch> 
       </Router>
       );
