@@ -1,5 +1,21 @@
 @import "variable.scss";
 
-h1, h2 {
-    color: $primaryColor;
-  }
+.top-header {
+    height: 70px;
+    padding: 0 30px;
+    margin-bottom: 0;
+    position: fixed;
+    background-color: $darkGrey;
+    z-index: 1004;
+    width: 100%;
+    top: 0;
+}
+
+.logo-wrap {
+  color: $whiteColor;
+  font-size: 40px;
+  display: flex;
+  width: 200px;
+  height: 100%;
+  align-items: center;
+}
