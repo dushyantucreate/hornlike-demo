@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'semantic-ui-css/semantic.min.css';
 import UserNavigation from './UserNavigation';
 
 class TopHeader extends Component {

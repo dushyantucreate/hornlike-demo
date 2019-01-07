@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import './scss/global.scss';
 import './scss/common.scss';
-import 'semantic-ui-css/semantic.min.css'
+import 'semantic-ui-css/semantic.min.scss'
+import 'semantic-ui-css/common.scss'
 import Dashboard from './container/Dashboard';
 import SignupForm from './component/SignupForm';
 
