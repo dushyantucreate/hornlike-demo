@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.css';
-import './scss/global.scss';
-import 'semantic-ui-css/semantic.min.css'
 import Dashboard from './container/Dashboard';
+
+import './semantic/common.scss';
+import './semantic/semantic_main.scss';
 
 class App extends Component {
   render() {
