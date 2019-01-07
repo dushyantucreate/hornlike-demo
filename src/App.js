@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
+import './scss/global.scss';
+import './scss/common.scss';
+import 'semantic-ui-css/semantic.min.scss'
+import 'semantic-ui-css/common.scss'
 import Dashboard from './container/Dashboard';
-
-import './semantic/common.scss';
-import './semantic/semantic_main.scss';
+import SignupForm from './component/SignupForm';
 
 class App extends Component {
   render() {
@@ -11,6 +14,7 @@ class App extends Component {
       <Router>
           <Switch>
               <Route exact path = "/dashboard" component = {Dashboard} />
+              <Route exact path = "/signupform" component = {SignupForm} />
           </Switch> 
       </Router>
       );
