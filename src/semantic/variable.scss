@@ -1,2 +1,11 @@
 $whiteColor: #FFFFFF;
 $darkGrey: #383D40;
+$green: #4caf50;
+$blue: #2196f3;
+$basic-font: 13px;
+$flex: flex;
+$full-width: 100%;
+
+%shadow {
+    box-shadow: 0 2px 5px rgba(0,0,0,.16), 0 2px 10px rgba(0,0,0,.12);
+}

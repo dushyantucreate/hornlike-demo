@@ -1,5 +1,14 @@
 @import "variable.scss";
 
+body {
+    font-size: $basic-font !important;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
+
 .top-header {
     height: 70px;
     padding: 0 30px;
