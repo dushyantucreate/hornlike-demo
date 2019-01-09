@@ -145,3 +145,74 @@ div.label {
     margin:0;
     text-align: center;
 }
+.login-page {
+    height: 100vh;
+    background: #f7f7f7 !important;
+}
+
+.login-section{
+    height: 100vh;   
+}
+
+.login-section .full-height{
+    height: 100%;  
+}
+
+.login{
+    position: relative;    
+    background-color: #fff;
+    padding: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 10px 27px 0 hsla(215,9%,64%,.18);
+    box-shadow: 0 10px 27px 0 hsla(215,9%,64%,.18);
+    padding: 35px;
+    float: left;
+    width: 100%;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.login label{
+    margin: 10px 0  ;
+    width: 100%;
+    float: left;
+}
+
+.login input{
+    margin: 5px 0;
+}
+
+ .dashboard-content-wrap {
+    display: flex;
+    padding-top: 70px;
+}
+
+.left-panel {
+    display: flex;
+    width: 223px;
+    top: 70px;
+    background-color: #456d9f;
+    position: fixed;
+    height: calc(100vh - 70px);
+}
+
+.left-navigation {
+    width: 100%; 
+}
+ 
+.sideNav {
+    margin: 0;
+    list-style-type: none;
+    padding: 20px 0;
+    .sideNav-list {
+        display: block;
+    }
+    .sideNav-list-link {
+        color: #fff;
+        padding: 12px 25px 12px 30px;
+        display: block;
+    }
+}
