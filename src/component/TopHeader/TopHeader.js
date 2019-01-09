@@ -7,8 +7,9 @@ class TopHeader extends Component {
           <div>
             <header className = "top-header">
             <div className = "logo-wrap">hronline</div>
-            </header>
             <UserNavigation />
+            </header>
+            
           </div>
       );
   }

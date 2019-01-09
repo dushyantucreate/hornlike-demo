@@ -1,5 +1,8 @@
 @import "variable.scss";
 
+*{
+    box-sizing: border-box;
+}
 body {
     font-size: $base-font !important;
 }
@@ -15,10 +18,18 @@ a {
     margin-bottom: 0;
     position: fixed;
     background-color: $darkGrey;
-    z-index: 1004;
     width: 100%;
+    display: flex;
     top: 0;
+    justify-content: space-between;
+    align-items: center;
 }
+.ui.dropdown{
+    color: #FFFFFF;
+    .menu.visible {
+        display: block;
+    }
+} 
 
 .logo-wrap {
   color: $whiteColor;
@@ -123,4 +134,36 @@ input {
 
 .login input{
     margin: 5px 0;
+}
+
+ .dashboard-content-wrap {
+    display: flex;
+    padding-top: 70px;
+}
+
+.left-panel {
+    display: flex;
+    width: 223px;
+    top: 70px;
+    background-color: #456d9f;
+    position: fixed;
+    height: calc(100vh - 70px);
+}
+
+.left-navigation {
+    width: 100%; 
+}
+ 
+.sideNav {
+    margin: 0;
+    list-style-type: none;
+    padding: 20px 0;
+    .sideNav-list {
+        display: block;
+    }
+    .sideNav-list-link {
+        color: #fff;
+        padding: 12px 25px 12px 30px;
+        display: block;
+    }
 }
