@@ -97,3 +97,95 @@
 .profile-right-col .active.item {
     border-bottom: 2px solid $blue;
 }
+
+.user-info-right {
+    padding: 40px 42px 0;
+}
+
+.user-info-col {
+    width: 100%;
+    display: $flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.heading-icon {
+    @include heading-icon;
+    background: url(../images/user-icon.png) no-repeat left center;
+}
+
+.heading-icon.home {
+    background: url(../images/home-icon.png) no-repeat left center;
+}
+
+.heading-icon.phone {
+    background: url(../images/phone-icon.png) no-repeat left center;
+}
+
+
+.user-data-detail {
+    padding: 25px 0 0 24px;
+}
+
+.user-detail-column {
+    display: $flex;
+    margin-bottom: 18px;
+}
+
+.user-property {
+    color: #5e5e5e;
+    font-size: $base-font;
+    font-weight: 600;
+    width: 170px;
+}
+
+.user-value {
+    font-size: $base-font;
+    color: #5e5e5e;
+}
+
+.grey-badge,
+.green-badge {
+    background: #9e9e9e;
+    color: $whiteColor;
+    padding: 3px 7px;
+    border-radius: 2px;
+}
+
+.green-badge {
+    background: $green;
+}
+
+@media (max-width: 767px) {
+
+    .user-profile-container {
+        padding: 30px 0 0;
+    }
+
+    .user-profile-container .ui.segment {
+        display: block;
+    }
+
+    .profile-left-col {
+        width: auto;
+        display: block;
+        padding: 30px 0 0;
+        height: auto;
+    }
+
+    .profile-left-col .ui.left.internal.rail {
+        margin: 0 auto;
+    }
+
+    .pmo-contact {
+        margin: 26px 0 0;
+    }
+
+    .profile-right-col {
+        margin: 40px 0 0;
+    }
+
+    .user-info-right {
+        padding: 40px 24px 0;
+    }
+}

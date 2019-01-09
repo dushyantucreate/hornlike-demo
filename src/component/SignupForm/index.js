@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container} from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import Header from '../TopHeader/TopHeader';
@@ -7,7 +7,7 @@ import Header from '../TopHeader/TopHeader';
 const Basic = () => (
     <div>
         <Header />
-        <Container>        
+        <Container text>
           <div className="sign-up-container">          
             <h1>Sign up for Free</h1>
             <Formik

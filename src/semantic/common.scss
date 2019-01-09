@@ -1,7 +1,7 @@
 @import "variable.scss";
 
 body {
-    font-size: $basic-font !important;
+    font-size: $base-font !important;
 }
 
 a {
@@ -43,28 +43,31 @@ a {
     float: left;
     width: 100%;
     margin: 50px 0 0;
+    box-sizing: border-box;
     form {
         width: 100%;
         float: left;
     }
-    input {
-        height: 48px;
-        border: 1px solid #e7eaf0;
-        border-top-color: rgb(231, 234, 240);
-        border-right-color: rgb(231, 234, 240);
-        border-bottom-color: rgb(231, 234, 240);
-        border-left-color: rgb(231, 234, 240);
-        width: 100%;
-        font-size: 15px;
-        padding: 0 16px;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border-radius: 3px;
-        -webkit-transition: all .2s ease-in-out;
-        transition: all .2s ease-in-out;
-        color: #555;
-        margin: 0 0 20px;
-    }
+}
+
+input {
+    height: 48px;
+    border: 1px solid #e7eaf0;
+    border-top-color: rgb(231, 234, 240);
+    border-right-color: rgb(231, 234, 240);
+    border-bottom-color: rgb(231, 234, 240);
+    border-left-color: rgb(231, 234, 240);
+    width: 100%;
+    font-size: 15px;
+    padding: 0 16px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 3px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: #555;
+    margin: 0 0 20px;
+    box-sizing: border-box;
 }
 
 .signup-btn, .signup-btn:focus, .signup-btn:hover {
