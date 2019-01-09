@@ -3496,7 +3496,11 @@ fn-name@~2.0.1:
 <<<<<<< HEAD
   integrity sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=
 =======
+<<<<<<< HEAD
+  integrity sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=
+=======
 >>>>>>> b16a7a2a2eeaab824837c1a4042d0c0803a12eeb
+>>>>>>> 45e618a4fe596121ab4ad271c7f62c89ede8c92a
 
 follow-redirects@^1.0.0:
   version "1.6.0"
@@ -7023,7 +7027,11 @@ property-expr@^1.5.0:
 <<<<<<< HEAD
   integrity sha512-CGuc0VUTGthpJXL36ydB6jnbyOf/rAHFvmVrJlH+Rg0DqqLFQGAP6hIaxD/G0OAmBJPhXDHuEJigrp0e0wFV6g==
 =======
+<<<<<<< HEAD
+  integrity sha512-CGuc0VUTGthpJXL36ydB6jnbyOf/rAHFvmVrJlH+Rg0DqqLFQGAP6hIaxD/G0OAmBJPhXDHuEJigrp0e0wFV6g==
+=======
 >>>>>>> b16a7a2a2eeaab824837c1a4042d0c0803a12eeb
+>>>>>>> 45e618a4fe596121ab4ad271c7f62c89ede8c92a
 
 proxy-addr@~2.0.4:
   version "2.0.4"
@@ -8304,7 +8312,11 @@ synchronous-promise@^2.0.5:
 <<<<<<< HEAD
   integrity sha512-TyOuWLwkmtPL49LHCX1caIwHjRzcVd62+GF6h8W/jHOeZUFHpnd2XJDVuUlaTaLPH1nuu2M69mfHr5XbQJnf/g==
 =======
+<<<<<<< HEAD
+  integrity sha512-TyOuWLwkmtPL49LHCX1caIwHjRzcVd62+GF6h8W/jHOeZUFHpnd2XJDVuUlaTaLPH1nuu2M69mfHr5XbQJnf/g==
+=======
 >>>>>>> b16a7a2a2eeaab824837c1a4042d0c0803a12eeb
+>>>>>>> 45e618a4fe596121ab4ad271c7f62c89ede8c92a
 
 table@^4.0.3:
   version "4.0.3"
@@ -8465,7 +8477,11 @@ toposort@^2.0.2:
 <<<<<<< HEAD
   integrity sha1-riF2gXXRVZ1IvvNUILL0li8JwzA=
 =======
+<<<<<<< HEAD
+  integrity sha1-riF2gXXRVZ1IvvNUILL0li8JwzA=
+=======
 >>>>>>> b16a7a2a2eeaab824837c1a4042d0c0803a12eeb
+>>>>>>> 45e618a4fe596121ab4ad271c7f62c89ede8c92a
 
 tough-cookie@>=2.3.3, tough-cookie@^2.3.4, tough-cookie@^2.5.0:
   version "2.5.0"
