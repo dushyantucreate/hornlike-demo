@@ -85,3 +85,42 @@ input {
      color: #FF0000;
  }
  
+ .login-page {
+    height: 100vh;
+    background: #f7f7f7 !important;
+}
+
+.login-section{
+    height: 100vh;   
+}
+
+.login-section .full-height{
+    height: 100%;  
+}
+
+.login{
+    position: relative;    
+    background-color: #fff;
+    padding: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 10px 27px 0 hsla(215,9%,64%,.18);
+    box-shadow: 0 10px 27px 0 hsla(215,9%,64%,.18);
+    padding: 35px;
+    float: left;
+    width: 100%;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.login label{
+    margin: 10px 0  ;
+    width: 100%;
+    float: left;
+}
+
+.login input{
+    margin: 5px 0;
+}
