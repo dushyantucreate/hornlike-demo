@@ -88,8 +88,7 @@ const Login = () => (
           <div style={{ color: "red" }}>{props.errors.password}</div>
         )}
       </div>
-      <input className="signup-btn" type="submit" value="Login" disabled={props.isSubmitting}
-      />
+      <button className="signup-btn" type="submit" disabled={props.isSubmitting}>Login</button>
       
     </Form>
   )}
