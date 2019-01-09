@@ -66,7 +66,7 @@ input {
     -webkit-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     color: #555;
-    margin: 0 0 20px;
+    margin:0;
     box-sizing: border-box;
 }
 
@@ -83,5 +83,13 @@ input {
 
  .error {
      color: #FF0000;
+     font-size: 14px;
  }
- 
+ .signup-form label {
+     font-size: 14px;
+     margin: 25px 0 5px;
+     display: block;
+ }
+button.signup-btn {
+    margin: 15px 0 0;
+}
