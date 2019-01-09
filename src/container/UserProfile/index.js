@@ -2,13 +2,17 @@ import React from 'react';
 import { Rail, Segment, Tab } from 'semantic-ui-react'
 import TopHeader from '../../component/TopHeader/TopHeader';
 import UserProfile from '../../component/UserProfile/ProfileLeftSide';
+import ProfileRightSide from '../../component/UserProfile/ProfileRightSide';
 
 import '../../semantic/profile.scss';
 
 export class Profile extends React.Component {
     render() {
         const panes = [
-            { menuItem: 'About', render: () => <Tab.Pane>Tab 1 Content</Tab.Pane> },
+            { menuItem: 'About', render: () =>
+            <Tab.Pane>
+                <ProfileRightSide />               
+            </Tab.Pane> },
             { menuItem: 'Appreciations', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
             { menuItem: 'Increment & Promotion', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
         ]
