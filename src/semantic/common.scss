@@ -1,15 +1,26 @@
 @import "variable.scss";
 
+*{
+    box-sizing: border-box;
+}
 .top-header {
     height: 70px;
     padding: 0 30px;
     margin-bottom: 0;
     position: fixed;
     background-color: $darkGrey;
-    z-index: 1004;
     width: 100%;
+    display: flex;
     top: 0;
+    justify-content: space-between;
+    align-items: center;
 }
+.ui.dropdown{
+    color: #FFFFFF;
+    .menu.visible {
+        display: block;
+    }
+} 
 
 .logo-wrap {
   color: $whiteColor;

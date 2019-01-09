@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Dropdown, Image } from 'semantic-ui-react';
+
+
+const trigger = (
+  <span>
+    <Image avatar/> Priyanka Sharma
+  </span>
+)
+
+const options = [
+  { key: 'user', text: 'Account', icon: 'user' },
+  { key: 'settings', text: 'Settings', icon: 'settings' },
+  { key: 'sign-out', text: 'Sign Out', icon: 'sign out' },
+]
+
 
 class UserNavigation extends Component {
   render() {
       return ( 
-        <ul>
-            <li><Link to="/">ghfgh</Link></li>
-        </ul>
+        <Dropdown
+        trigger={trigger}
+        options={options}
+        pointing='top left'
+        icon={null}
+      />
       );
   }
 }
