@@ -27,5 +27,5 @@ class UserNavigation extends Component {
       );
   }
 }
-
+  
 export default UserNavigation;

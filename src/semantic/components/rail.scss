@@ -14,9 +14,8 @@
 *******************************/
 
 .ui.rail {
-  position: absolute;
   top: 0%;
-  width: 300px;
+  width: 260px;
   height: 100%;
 }
 .ui.left.rail {
@@ -45,14 +44,14 @@
 .ui.left.internal.rail {
   left: 0%;
   right: auto;
-  padding: 0em 0em 0em 2rem;
-  margin: 0em 0em 0em 2rem;
+  padding: 0;
+  margin: 0;
 }
 .ui.right.internal.rail {
   left: auto;
   right: 0%;
-  padding: 0em 2rem 0em 0em;
-  margin: 0em 2rem 0em 0em;
+  padding: 0;
+  margin: 0;
 }
 
 /*--------------

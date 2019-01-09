@@ -1,30 +1,41 @@
 import React from 'react';
-import { Image, Rail, Segment } from 'semantic-ui-react'
+import { Rail, Segment, Tab } from 'semantic-ui-react'
 import TopHeader from '../../component/TopHeader/TopHeader';
 import UserProfile from '../../component/UserProfile/ProfileLeftSide';
+import ProfileRightSide from '../../component/UserProfile/ProfileRightSide';
 
 import '../../semantic/profile.scss';
 
 export class Profile extends React.Component {
-  render() {
+    render() {
+        const panes = [
+            { menuItem: 'About', render: () =>
+            <Tab.Pane>
+                <ProfileRightSide />               
+            </Tab.Pane> },
+            { menuItem: 'Appreciations', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
+            { menuItem: 'Increment & Promotion', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
+        ]
         return (
             <>
                 <div className= "dashboard-page">
                     <TopHeader />
                 </div>
                 <div className="user-profile-container">
-                <Segment textAlign='center'>
-    <Image src='/images/wireframe/paragraph.png' />
-
-    <Rail internal position='left'>
-      <Segment>Left Rail Content</Segment>
-    </Rail>
-
-    <Rail internal position='right'>
-      <Segment>Right Rail Content</Segment>
-    </Rail>
-  </Segment>
-                    <UserProfile />
+                    <Segment className="user-profile-row">
+                        <div className="profile-left-col">
+                            <Rail internal position='left'>
+                                <Segment>
+                                    <UserProfile />
+                                </Segment>
+                            </Rail>
+                        </div>
+                        <div className="profile-right-col">
+                            <Rail internal position='right'>
+                                <Tab panes={panes} />
+                            </Rail>
+                        </div>
+                    </Segment>
                 </div>
             </>
         );
