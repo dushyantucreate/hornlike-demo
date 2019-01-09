@@ -45,7 +45,6 @@ const Login = () => (
   // Handles our submission
   onSubmit={(values, { setSubmitting }) => {
     // This is where you could wire up axios or superagent
-    console.log("Submitted Values:", values);
     // Simulates the delay of a real request
     setTimeout(() => setSubmitting(false), 3 * 1000);
   }}
@@ -89,7 +88,6 @@ const Login = () => (
         )}
       </div>
       <button className="signup-btn" type="submit" disabled={props.isSubmitting}>Login</button>
-      
     </Form>
   )}
 </Formik>
