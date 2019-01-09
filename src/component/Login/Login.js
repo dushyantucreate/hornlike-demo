@@ -44,8 +44,7 @@ const Login = () => (
 
   // Handles our submission
   onSubmit={(values, { setSubmitting }) => {
-    // This is where you could wire up axios or superagent
-    // Simulates the delay of a real request
+    console.log("Submitted Values:", values);
     setTimeout(() => setSubmitting(false), 3 * 1000);
   }}
 >
