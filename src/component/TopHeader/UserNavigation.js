@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Dropdown, Image } from 'semantic-ui-react';
+import UserIcon from '../../images/profile_image.jpg';
 
 
 const trigger = (
   <span>
-    <Image avatar/> Priyanka Sharma
+    <Image avatar src={UserIcon} /> Priyanka Sharma
   </span>
 )
 
