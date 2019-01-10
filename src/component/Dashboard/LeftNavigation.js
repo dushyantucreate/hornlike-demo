@@ -7,7 +7,7 @@ class LeftNavigation extends Component {
           <div className="left-navigation">
           <ul className="sideNav">
             <li className="sideNav-list">
-              <Link icon="heart" className = "sideNav-list-link" to="/dashboard">Dashboard</Link>
+              <Link className = "sideNav-list-link" to="/dashboard">Dashboard</Link>
             </li>
             <li className="sideNav-list">
               <Link className = "sideNav-list-link" to="/dashboard">My Profile</Link>
