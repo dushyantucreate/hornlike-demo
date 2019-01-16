@@ -5,7 +5,7 @@ import UserIcon from '../../images/profile_image.jpg';
 
 const trigger = (
   <span>
-    <Image avatar src={UserIcon} /> Priyanka Sharma
+    <Image avatar src={UserIcon} /> 
   </span>
 )
 

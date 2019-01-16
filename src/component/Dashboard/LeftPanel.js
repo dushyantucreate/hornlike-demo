@@ -5,7 +5,7 @@ class LeftPanel extends Component {
   render() {
       return ( 
           <div className="left-panel">
-          <LeftNavigation />
+             <LeftNavigation />
           </div>
       );
   }

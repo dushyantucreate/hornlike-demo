@@ -9,8 +9,8 @@ class Calendar extends Component {
                 <div className="calendar-year">2019</div>
                 <div className="calendar-day">January</div> 
                 <ul className="calendar-actions">
-                <li><Link className = "next-btn" to="/dashboard">Next</Link></li>
-                <li><Link className = "prev-btn" to="/dashboard">Previous</Link></li>
+                    <li><Link className = "next-btn" to="/dashboard">Next</Link></li>
+                    <li><Link className = "prev-btn" to="/dashboard">Previous</Link></li>
                 </ul>
             </div>
             <div className="calendar-body">

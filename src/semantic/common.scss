@@ -24,6 +24,19 @@ a {
     justify-content: space-between;
     align-items: center;
 }
+.main-header {
+    height: 70px;
+    padding: 0 30px;
+    margin-bottom: 0;
+    position: fixed;
+    background-color: $whiteColor;
+    width: 100%;
+    display: flex;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
 .ui.dropdown{
     color: #FFFFFF;
     .menu.visible {
@@ -39,6 +52,15 @@ a {
   height: 100%;
   align-items: center;
 }
+
+.logo {
+    color: $darkGrey;
+    font-size: 40px;
+    display: flex;
+    width: 200px;
+    height: 100%;
+    align-items: center;
+  }
 
 .sign-up-container {
     position: relative;    
@@ -309,3 +331,12 @@ ul.calendar-actions {
         border-right: none;
     }
 }
+
+.hero-section {
+    width: 100%;
+    height: 100%;    
+    background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%);
+    opacity: 1;
+    min-height: 700px;
+ }
+ 
