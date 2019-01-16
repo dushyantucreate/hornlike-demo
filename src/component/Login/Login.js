@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { Header, Grid, Button, Input, Container } from 'semantic-ui-react'
+import TopHeader from '../TopHeader/TopHeader';
 
 const Login = () => (
   <div className="login-page">   
+      <TopHeader />
      <Container>
      <div className="login-section">   
      <Grid className="full-height" verticalAlign='middle' columns={2} centered>
