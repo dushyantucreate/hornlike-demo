@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import { Header, Grid, Button, Input, Container } from 'semantic-ui-react'
+import React from 'react';
+import { Formik, Form } from 'formik';
+import { Header, Grid, Container } from 'semantic-ui-react'
 import TopHeader from '../TopHeader/TopHeader';
 
 const Login = () => (
