@@ -17,3 +17,7 @@ $full-width: 100%;
     background-size: 100%;
     padding: 0 0 0 24px;
 }
+
+@mixin for-mobile {
+    @media (max-width: 767px) { @content; }
+}

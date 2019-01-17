@@ -5,6 +5,7 @@
 }
 body {
     font-size: $base-font !important;
+    padding: 70px 0 0;
 }
 
 a {
@@ -23,6 +24,7 @@ a {
     top: 0;
     justify-content: space-between;
     align-items: center;
+    z-index: 99;
 }
 .main-header {
     height: 70px;
@@ -340,3 +342,8 @@ ul.calendar-actions {
     min-height: 700px;
  }
  
+ .space-box {
+    margin: 80px 0 0 !important;
+    text-align: center;
+    color: darken($whiteColor, 40%);
+ }

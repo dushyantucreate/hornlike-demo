@@ -1,3 +1,5 @@
+@import "variable.scss";
+
 /*
  * # Semantic - Menu
  * http://github.com/semantic-org/semantic-ui/
@@ -69,8 +71,10 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 33.33%;
 }
 .ui.menu .item {
   position: relative;
@@ -87,7 +91,7 @@
           user-select: none;
   background: none;
   padding: 0.92857143em 1.14285714em;
-  text-transform: none;
+  text-transform: uppercase;
   color: rgba(0, 0, 0, 0.87);
   font-weight: normal;
   -webkit-transition: background 0.1s ease, color 0.1s ease, -webkit-box-shadow 0.1s ease;
@@ -622,11 +626,9 @@ Floated Menu / Item
 
 .ui.tabular.menu {
   border-radius: 0em;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: inset 0 -2px 0 0 #eee !important;
   border: none;
   background: none transparent;
-  border-bottom: 1px solid #D4D4D5;
 }
 .ui.tabular.fluid.menu {
   width: calc(100% + (1px * 2)) !important;
@@ -634,11 +636,9 @@ Floated Menu / Item
 .ui.tabular.menu .item {
   background: transparent;
   border-bottom: none;
-  border-left: 1px solid transparent;
-  border-right: 1px solid transparent;
-  border-top: 2px solid transparent;
-  padding: 0.92857143em 1.42857143em;
-  color: rgba(0, 0, 0, 0.87);
+  border-bottom: 2px solid transparent;
+  padding: 18px 10px;
+  color: #bbb;
 }
 .ui.tabular.menu .item:before {
   display: none;
@@ -647,20 +647,19 @@ Floated Menu / Item
 /* Hover */
 .ui.tabular.menu .item:hover {
   background-color: transparent;
-  color: rgba(0, 0, 0, 0.8);
+  color: $darkGrey;
 }
 
 /* Active */
 .ui.tabular.menu .active.item {
-  background: none #FFFFFF;
-  color: rgba(0, 0, 0, 0.95);
-  border-top-width: 1px;
-  border-color: #D4D4D5;
-  font-weight: bold;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #2196f3;
   margin-bottom: -1px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  border-radius: 0.28571429rem 0.28571429rem 0px 0px !important;
+  border-radius: 0;
+  color: $darkGrey;
 }
 
 /* Coupling with segment for attachment */
@@ -1910,12 +1909,7 @@ Floated Menu / Item
 
 /* Middle */
 .ui.attached.menu {
-  top: 0px;
-  bottom: 0px;
-  border-radius: 0px;
-  margin: 0em -1px;
-  width: calc(100% - (-1px * 2));
-  max-width: calc(100% - (-1px * 2));
+  margin: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -1965,8 +1959,6 @@ Floated Menu / Item
   border: none;
 }
 .ui.attached.tabular.menu {
-  margin-left: 0;
-  margin-right: 0;
   width: 100%;
 }
 
