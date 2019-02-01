@@ -6,17 +6,22 @@ import { isEmpty } from 'lodash';
 import Header from '../TopHeader/TopHeader';
 import axios from 'axios';
 import { RegisterUser } from '../../utili/URL';
+import { Redirect } from 'react-router-dom'
 
 class UserRegisterForm extends React.Component {
 
     constructor(props){
         super(props); 
         this.state = {          
+          isRedirect: false,
           errorMessage: '',
         }
       }
 
     render(){
+        if (this.state.isRedirect) {
+            return <Redirect to="/SuccessMessage" />
+          }
         return(
             <div>
                 <Header />
@@ -53,6 +58,9 @@ class UserRegisterForm extends React.Component {
                             .post(RegisterUser, {user: values})
                             .then(res => {
                                 console.log(res);
+                                if(res.status == 200) {
+                                    this.setState({ isRedirect: true });
+                                }
                             })
                             .catch(error => {
                                 this.setState({ errorMessage: 'Something went wrong....' });
