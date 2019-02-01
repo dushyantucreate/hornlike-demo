@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import {
   Button,
@@ -33,7 +34,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='For login just click on below button'
+      content='For login just click on below link'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -41,10 +42,13 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
-    <Button primary size='huge'>
+      
+    <Link to='/Login'>Login</Link>  
+    {/* <Button to='/Login'
+     primary size='huge'>
       Get Started
       <Icon name='right arrow' />
-    </Button>
+    </Button> */}
   </Container>
 )
 
