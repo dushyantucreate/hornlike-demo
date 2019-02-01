@@ -6,9 +6,8 @@ class Hero extends Component {
       return ( 
           <div>
             <section className="hero-section">
-                <h1>Change the way you manage time-offtrack job applicants</h1>
-                <h5>SnapHRM is a modern HR Management Software built with speed and ease of use in mind. We are trusted by thousands of companies worldwide.</h5>
-
+                <h1 className="hero-title">Change the way you manage time-offtrack job applicants</h1>
+                <h5 className="hero-content">SnapHRM is a modern HR Management Software built with speed and ease of use in mind. We are trusted by thousands of companies worldwide.</h5>
             </section>
           </div>
       );

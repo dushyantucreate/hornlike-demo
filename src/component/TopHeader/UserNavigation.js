@@ -1,30 +1,45 @@
 import React, { Component } from 'react';
-import { Dropdown, Image } from 'semantic-ui-react';
+import {Button, Grid, Dropdown, Image } from 'semantic-ui-react';
 import UserIcon from '../../images/profile_image.jpg';
-
-
-const trigger = (
-  <span>
-    <Image avatar src={UserIcon} /> 
-  </span>
-)
-
-const options = [
-  { key: 'user', text: 'Account', icon: 'user' },
-  { key: 'settings', text: 'Settings', icon: 'settings' },
-  { key: 'sign-out', text: 'Sign Out', icon: 'sign out' },
-]
+import { Redirect } from "react-router-dom";
 
 
 class UserNavigation extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        auth: true,      
+        isLogin: false       
+    }
+}
+componentDidMount() {
+    if (window.localStorage.getItem('authToken')) {
+        this.setState({isLogin: true});
+    }
+}
+
+handleClick = () => {
+    localStorage.clear('authToken');
+    this.setState({auth: false});
+}
+
   render() {
+    const { auth, isLogin } = this.state;
+        if (!auth) {
+            return <Redirect to="/" />
+        }
       return ( 
-        <Dropdown
-        trigger={trigger}
-        options={options}
-        pointing='top left'
-        icon={null}
-      />
+      <div>
+        { isLogin &&
+          (<Grid.Column className="right" width={8}>
+              <Button color='red'
+                  type="submit"
+                  content="Logout"
+                  value="Submit"
+                  onClick={this.handleClick}
+              />
+          </Grid.Column>)}
+      </div>
       );
   }
 }
