@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Button, Input, Label } from 'semantic-ui-react'
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { isEmpty } from 'lodash';
 import Header from '../TopHeader/TopHeader';

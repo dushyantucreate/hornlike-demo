@@ -1,105 +1,125 @@
 import React from 'react';
-import { Formik, Form } from 'formik';
-import { Header, Grid, Container } from 'semantic-ui-react'
+import { Formik} from 'formik';
+import { Header, Grid, Container, Button } from 'semantic-ui-react'
 import TopHeader from '../TopHeader/TopHeader';
+import axios from 'axios';
+import { loginuser } from '../../utili/URL';
+import { Redirect } from 'react-router-dom'
 
-const Login = () => (
-  <div className="login-page">   
-      <TopHeader />
-     <Container>
-     <div className="login-section">   
-     <Grid className="full-height" verticalAlign='middle' columns={2} centered>
-      <Grid.Row verticalAlign='middle'>
-        <Grid.Column>
-        <Header as='h2' color='teal' textAlign='center'>
-          Log-in to your account
-          </Header> 
-            <div className="login">    
-            <Formik
-  // Sets up our default values
-  initialValues={{ email: "", password: "" }}
 
-  // Validates our data
-  validate={values => {
-    const errors = {};
+const initialState = { "email": "", "password" : "" };
 
-    if (!values.email) errors.email = "Required";
+class Login extends React.Component {
+  constructor(props){
+    super(props); 
+    this.state = {
+      isRedirect: false,
+      errorMessage: '',
+    }
+  }
 
-    if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
-    ) {
-      errors.email = "You must supply a valid email address";
+  componentWillMount() {
+    localStorage.setItem("loggeuser", JSON.stringify(initialState));
+  }
+
+  render () {
+    if (this.state.isRedirect) {
+      return <Redirect to="/Dashboard" />
     }
 
-    if (values.password.length < 8) {
-      errors.password = "Passwords must be at least 8 characters";
-    }
+    return (
+      <div className="login-page">
+        <TopHeader />
+          <Container>
+            <div className="login-section">
+              <Grid className="full-height" verticalAlign='middle' columns={2} centered>
+                <Grid.Row verticalAlign='middle'>
+                  <Grid.Column>
+                    <Header as='h2' color='teal' textAlign='center'>
+                      Log-in to your account
+                    </Header> 
 
-    if (values.email === values.password) {
-      errors.password =
-        "Your password shouldn't be the same as your email";
-    }
+                    <div className="login">
+                    <Formik 
+                        initialValues = {{email: '', password: ''}}
+                            validate={values => {
+                                let errors = {};
+                                if (!values.email) {
+                                errors.email = 'Please enter your email address';
+                                } else if (
+                                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+                                ) {
+                                errors.email = 'Invalid email address';
+                                }
+                                else if (!values.password) {
+                                    errors.password = 'Please enter the password';
+                                }                                 
+                                return errors;
+                            }}
+                            onSubmit={(values, { setSubmitting }) => {
+                                axios
+                                .post(loginuser, { user: values})
+                                .then(res => {
+                                    if(res.status === 200 ) {
+                                        window.localStorage.setItem('authToken', res.data.user.token);
+                                        this.setState({ isRedirect: true });
+                                    }
+                                })
+                                .catch(error => {
+                                    this.setState({ errorMessage: 'Something went wrong....' });
+                                });
+                                setSubmitting(false)
+                            }}
+                            >
 
-    return errors;
-  }}
+                            {({
+                                values,
+                                errors,
+                                touched,
+                                handleChange,
+                                handleBlur,
+                                handleSubmit,
+                                isSubmitting,                                
+                            }) => (
+                          <form onSubmit={handleSubmit}>
+                              <div className="input-box">
+                                  <input fluid placeholder='E-mail address'
+                                      type="email"
+                                      name="email"
+                                      onChange={handleChange}
+                                      onBlur={handleBlur}
+                                      value={values.email}
+                                  />
+                      
+                                  <div className="error-message">{errors.email && touched.email && errors.email}</div>
+                              </div>
 
-  // Handles our submission
-  onSubmit={(values, { setSubmitting }) => {
-    console.log("Submitted Values:", values);
-    setTimeout(() => setSubmitting(false), 3 * 1000);
-  }}
->
-  {props => (
-    <Form>
-      <label htmlFor="email">Email</label>
-      <div>
-        <input
-          name="email"
-          type="email"
-          placeholder="Enter your account email"
-          value={props.values.email}
-          onChange={props.handleChange}
-          onBlur={props.handleBlur}
-          style={{
-            borderColor:
-              props.errors.email && props.touched.email && "red"
-          }}
-        />
-        {props.errors.email && props.touched.email && (
-          <div style={{ color: "red" }}>{props.errors.email}</div>
-        )}
-      </div>
-      <label htmlFor="password">Password</label>
-      <div>
-        <input
-          name="password"
-          type="password"
-          placeholder="Enter your account password"
-          value={props.values.password}
-          onChange={props.handleChange}
-          onBlur={props.handleBlur}
-          style={{
-            borderColor:
-              props.errors.password && props.touched.password && "red"
-          }}
-        />
-        {props.errors.password && props.touched.password && (
-          <div style={{ color: "red" }}>{props.errors.password}</div>
-        )}
-      </div>
-      <button className="signup-btn" type="submit" disabled={props.isSubmitting}>Login</button>
-    </Form>
-  )}
-</Formik>
- 
-
+                              <div className="input-box">
+                                  <input fluid placeholder='Password'
+                                      type="password"
+                                      name="password"
+                                      onChange={handleChange}
+                                      onBlur={handleBlur}
+                                      value={values.password}
+                                  />
+                                  <div className="error-message">{errors.password && touched.password && errors.password}</div>
+                              </div>
+                              {(this.state.errorMessage !== '' ) && <div className="error-message">{this.state.errorMessage}</div>}
+                              <Button color='teal' fluid size='large' type="submit" disabled={isSubmitting}>
+                                  Submit
+                              </Button>
+                          </form>
+                        )}
+                    </Formik>
+                  </div>
+                </Grid.Column>
+              </Grid.Row>
+            </Grid>
           </div>
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
-    </div>
-    </Container> 
-  </div>  
-)
+        </Container> 
+      </div>  
+    )
+  }
+}
 
 export default Login;
