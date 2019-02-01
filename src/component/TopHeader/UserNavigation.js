@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Button, Grid, Dropdown, Image } from 'semantic-ui-react';
-import UserIcon from '../../images/profile_image.jpg';
 import { Redirect } from "react-router-dom";
 
 
