@@ -49,16 +49,11 @@ class UserRegisterForm extends React.Component {
                             })
                         }
                         onSubmit={(values, { setSubmitting }) => {
-                            // setTimeout(() => {
-                            //     alert(JSON.stringify(values, null, 2));
-                            //     setSubmitting(false);
-                            // }, 400);
-        
                             axios
                             .post(RegisterUser, {user: values})
                             .then(res => {
                                 console.log(res);
-                                if(res.status == 200) {
+                                if(res.status === 200) {
                                     this.setState({ isRedirect: true });
                                 }
                             })

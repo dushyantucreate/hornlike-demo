@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Grid, Dropdown, Image } from 'semantic-ui-react';
+import {Button, Grid } from 'semantic-ui-react';
 import { Redirect } from "react-router-dom";
 
 
