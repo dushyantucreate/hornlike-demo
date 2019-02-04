@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { Redirect } from "react-router-dom";
 
 import {
   Button,
@@ -11,25 +12,36 @@ import {
   Visibility,
 } from 'semantic-ui-react'
 
+class ThankYou extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      isRedirect: false,
+    }
+  }
 
-const getWidth = () => {
-  const isSSR = typeof window === 'undefined'
+  getWidth = () => {
+    const isSSR = typeof window === 'undefined'
+  
+    return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
+  }
 
-  return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
-}
+  handleClick = () => {
+    this.setState ({isRedirect: true})
+  }
+  
 
-
-const HomepageHeading = ({ mobile }) => (
+ homepageHeading = () => (
   <Container text>
     <Header
       as='h1'
       content='Thank you for signup'
       inverted
       style={{
-        fontSize: mobile ? '2em' : '4em',
+        fontSize:'4em',
         fontWeight: 'normal',
         marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
+        marginTop: '3em',
       }}
     />
     <Header
@@ -37,27 +49,27 @@ const HomepageHeading = ({ mobile }) => (
       content='For login just click on below link'
       inverted
       style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
+        fontSize: '1.7em',
         fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em',
+        marginTop: '1.5em',
       }}
     />
       
-    <Link to='/Login'>Login</Link>  
-    {/* <Button to='/Login'
+    
+    <Button onClick={this.handleClick}
      primary size='huge'>
       Get Started
       <Icon name='right arrow' />
-    </Button> */}
+    </Button>
   </Container>
-)
-
-
-
-class ThankYou extends React.Component {
+);
     render() {
+
+      if(this.state.isRedirect) {
+        return <Redirect to="/Login" />
+      }
         return(
-            <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+            <Responsive getWidth={this.getWidth} minWidth={Responsive.onlyTablet.minWidth}>
             <Visibility
               once={false}
               onBottomPassed={this.showFixedMenu}
@@ -69,7 +81,7 @@ class ThankYou extends React.Component {
                 style={{ minHeight: 700, padding: '1em 0em' }}
                 vertical
               >
-                <HomepageHeading />
+                {this.homepageHeading()}
               </Segment>
             </Visibility>
     
