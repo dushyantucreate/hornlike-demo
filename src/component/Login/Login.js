@@ -16,7 +16,7 @@ class Login extends React.Component {
     this.state = {
       isRedirect: false,
       errorMessage: '',
-      loading: true
+      loading: false
     }
   }
 
