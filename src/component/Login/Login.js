@@ -5,6 +5,7 @@ import TopHeader from '../TopHeader/TopHeader';
 import axios from 'axios';
 import { loginuser } from '../../utili/URL';
 import { Redirect } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 
 
 const initialState = { "email": "", "password" : "" };
@@ -15,6 +16,7 @@ class Login extends React.Component {
     this.state = {
       isRedirect: false,
       errorMessage: '',
+      loading: false
     }
   }
 
@@ -26,6 +28,9 @@ class Login extends React.Component {
     if (this.state.isRedirect) {
       return <Redirect to="/Dashboard" />
     }
+    if (this.state.loading) {
+      return <Loader />;
+  }
 
     return (
       <div className="login-page">
@@ -57,18 +62,21 @@ class Login extends React.Component {
                                 return errors;
                             }}
                             onSubmit={(values, { setSubmitting }) => {
+                              this.setState({loading:true }, () => {
                                 axios
                                 .post(loginuser, { user: values})
-                                .then(res => {
+                                .then(res => {                                                
                                     if(res.status === 200 ) {
                                         window.localStorage.setItem('authToken', res.data.user.token);
-                                        this.setState({ isRedirect: true });
+                                        this.setState({ isRedirect: true });                                                    
+                                        // loading: false
                                     }
                                 })
                                 .catch(error => {
                                     this.setState({ errorMessage: 'Something went wrong....' });
                                 });
                                 setSubmitting(false)
+                              })    
                             }}
                             >
 

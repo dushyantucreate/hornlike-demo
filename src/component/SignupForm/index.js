@@ -7,6 +7,7 @@ import Header from '../TopHeader/TopHeader';
 import axios from 'axios';
 import { RegisterUser } from '../../utili/URL';
 import { Redirect } from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 
 class UserRegisterForm extends React.Component {
 
@@ -15,12 +16,16 @@ class UserRegisterForm extends React.Component {
         this.state = {          
           isRedirect: false,
           errorMessage: '',
+          loader: false
         }
       }
 
     render(){
         if (this.state.isRedirect) {
             return <Redirect to="/SuccessMessage" />
+          }
+          if (this.state.loading) {
+            return <Loader />;    
           }
         return(
             <div>
@@ -49,6 +54,7 @@ class UserRegisterForm extends React.Component {
                             })
                         }
                         onSubmit={(values, { setSubmitting }) => {
+                            this.setState({loading:true }, () => {
                             axios
                             .post(RegisterUser, {user: values})
                             .then(res => {
@@ -61,7 +67,7 @@ class UserRegisterForm extends React.Component {
                                 this.setState({ errorMessage: 'Something went wrong....' });
                             });
                             setSubmitting(false)
-                            
+                            })    
                         }}
                         render={({
                             dirty,
