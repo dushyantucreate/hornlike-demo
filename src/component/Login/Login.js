@@ -5,7 +5,7 @@ import TopHeader from '../TopHeader/TopHeader';
 import axios from 'axios';
 import { loginuser } from '../../utili/URL';
 import { Redirect } from 'react-router-dom'
-import Loader from 'react-loader-spinner'
+import LoadingComponent from '../LoadingSpinner'
 
 
 const initialState = { "email": "", "password" : "" };
@@ -16,7 +16,7 @@ class Login extends React.Component {
     this.state = {
       isRedirect: false,
       errorMessage: '',
-      loading: false
+      loading: true
     }
   }
 
@@ -29,7 +29,7 @@ class Login extends React.Component {
       return <Redirect to="/Dashboard" />
     }
     if (this.state.loading) {
-      return <Loader />;
+      return <LoadingComponent />;
   }
 
     return (
