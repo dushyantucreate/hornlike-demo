@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Grid, Button } from 'semantic-ui-react'
 import { Redirect } from "react-router-dom"
 import ContentWidget from './HeroWidget'
-
+import Information from '../InformationSection'
+import DashboardImage from '../../img/dashboard.svg'
 
 class Hero extends Component {
     state={
@@ -41,7 +42,45 @@ class Hero extends Component {
                 </Grid>
             </section>
 
-            <ContentWidget />
+              <ContentWidget />
+
+              <Information data={{img:DashboardImage, sectiontitle:"Powerful Dashboard"}}
+                  Column1={(content) => (
+                      <Grid.Column>
+                          <img className="content-view" src={content.img} />
+                      </Grid.Column>
+                  )}
+                  Column2={(props) => (
+                      <Grid.Column>
+                          <h3 className="content-title">{props.sectiontitle}</h3>
+                          <p className="font-normal">{props.content}</p>                          
+                          <p className="font-normal">SnapHRM provides a powerful dashboard, where you can view a summary of all the necessary information. </p>
+                          <p className="font-normal">You can approve leaves, expense claims, view attendance summaries, events, reminders and more right from your dashboard. </p>                          
+                      </Grid.Column>
+                  )}
+              />
+
+
+              <Information
+                data={ {img: DashboardImage, sectiontitle: "Powerful Dashboard" } }
+                  Column2={(content) => (
+                      <Grid.Column>
+                          <img className="content-view" src={content.img} />
+                      </Grid.Column>
+                  )}
+                  Column1={(content) => (
+                      <Grid.Column>
+                          <h3 className="content-title">{content.sectiontitle}</h3>
+                          <p className="font-normal">{content.content}</p>                          
+                            <p className="font-normal">SnapHRM provides a powerful dashboard, where you can view a summary of all the necessary information. </p>
+                            <p className="font-normal">You can approve leaves, expense claims, view attendance summaries, events, reminders and more right from your dashboard. </p>                          
+                      </Grid.Column>
+                  )}
+              />
+               
+               
+
+            
          </div>  
       );
    }
