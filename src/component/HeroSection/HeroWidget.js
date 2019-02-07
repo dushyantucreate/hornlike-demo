@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Container } from 'semantic-ui-react'
 
+
 class HeroWidget extends React.Component {
     render(){
         return (

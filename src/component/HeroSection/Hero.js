@@ -43,37 +43,44 @@ class Hero extends Component {
             </section>
 
               <ContentWidget />
-
-              <Information data={{img:DashboardImage, sectiontitle:"Powerful Dashboard"}}
-                  Column1={(content) => (
+              
+              <Information
+                  img={DashboardImage}
+                  sectiontitle="Powerful Dashboard"
+                  Column1={(props) => (
                       <Grid.Column>
-                          <img className="content-view" src={content.img} />
+                          <img className="content-view" src={props.img} alt={props.img} />
                       </Grid.Column>
                   )}
                   Column2={(props) => (
                       <Grid.Column>
                           <h3 className="content-title">{props.sectiontitle}</h3>
-                          <p className="font-normal">{props.content}</p>                          
-                          <p className="font-normal">SnapHRM provides a powerful dashboard, where you can view a summary of all the necessary information. </p>
-                          <p className="font-normal">You can approve leaves, expense claims, view attendance summaries, events, reminders and more right from your dashboard. </p>                          
+                          <p className="font-normal">{props.content}</p>
+                          <p className="font-normal">
+                            <p>SnapHRM provides a powerful dashboard, where you can view a summary of all the necessary information. </p>
+                            <p>You can approve leaves, expense claims, view attendance summaries, events, reminders and more right from your dashboard. </p>
+                          </p>
                       </Grid.Column>
                   )}
               />
 
 
               <Information
-                data={ {img: DashboardImage, sectiontitle: "Powerful Dashboard" } }
-                  Column2={(content) => (
+                  img={DashboardImage}
+                  sectiontitle="Powerful Dashboard"
+                  Column2={(props) => (
                       <Grid.Column>
-                          <img className="content-view" src={content.img} />
+                          <img className="content-view" alt={props.img} src={props.img} />
                       </Grid.Column>
                   )}
-                  Column1={(content) => (
+                  Column1={(props) => (
                       <Grid.Column>
-                          <h3 className="content-title">{content.sectiontitle}</h3>
-                          <p className="font-normal">{content.content}</p>                          
-                            <p className="font-normal">SnapHRM provides a powerful dashboard, where you can view a summary of all the necessary information. </p>
-                            <p className="font-normal">You can approve leaves, expense claims, view attendance summaries, events, reminders and more right from your dashboard. </p>                          
+                          <h3 className="content-title">{props.sectiontitle}</h3>
+                          <p className="font-normal">{props.content}</p>
+                          <p className="font-normal">
+                            <p>SnapHRM provides a powerful dashboard, where you can view a summary of all the necessary information. </p>
+                            <p>You can approve leaves, expense claims, view attendance summaries, events, reminders and more right from your dashboard. </p>
+                          </p>
                       </Grid.Column>
                   )}
               />
