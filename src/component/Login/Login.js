@@ -8,6 +8,7 @@ import { Redirect } from 'react-router-dom'
 import LoadingComponent from '../LoadingSpinner'
 
 
+
 const initialState = { "email": "", "password" : "" };
 
 class Login extends React.Component {
@@ -43,7 +44,7 @@ class Login extends React.Component {
                     <Header as='h2' color='teal' textAlign='center'>
                       Log-in to your account
                     </Header> 
-
+                    
                     <div className="login">
                     <Formik 
                         initialValues = {{email: '', password: ''}}

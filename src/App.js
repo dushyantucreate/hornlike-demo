@@ -7,6 +7,7 @@ import SuccessMessage from './container/SuccessMessage';
 import SignupForm from './component/SignupForm';
 import Login from './component/Login/Login';
 import ContactUs from './container/ContactUs'
+import UserProfiles from './component/UserProfiles'
 
 
 import './semantic/common.scss';
@@ -24,7 +25,8 @@ class App extends Component {
               <Route exact path = "/login" component = {Login} />
               <Route exact path = "/SuccessMessage" component = {SuccessMessage} />
               <Route exact path = "/ContactUs" component = {ContactUs} />
-              <Route exact path = "/" component = {Landing} />
+              <Route exact path = "/UserProfile" component = {ContactUs} />
+              <Route exact path = "/UserProfiles" component = {UserProfiles} />
           </Switch> 
       </Router>
       );

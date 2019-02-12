@@ -6,7 +6,7 @@ class RightPanel extends Component {
       return ( 
           <div className="right-panel">
             <div className="dashboard-main-content">
-                <Calendar />
+                <Calendar />                
             </div>
           </div>
       );

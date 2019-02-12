@@ -15,7 +15,7 @@ class LeftNavigation extends Component {
              </li>
 
              <li className="sideNav-list">
-                <Link className = "sideNav-list-link" to="/dashboard">Team</Link>
+                <Link className = "sideNav-list-link" to="/UserProfiles">Team</Link>
              </li>
 
              <li className="sideNav-list">
